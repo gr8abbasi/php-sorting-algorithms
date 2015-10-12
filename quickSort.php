@@ -2,12 +2,8 @@
 
 namespace sortingAlgos;
 
-ini_set('xdebug.max_nesting_level', 50000);
-
 class QuickSort
 {
-    protected $unsortedArray;
-
     protected $arrayLength;
 
     protected $leftValues = array();
@@ -18,22 +14,9 @@ class QuickSort
 
     protected $selectedKey;
 
-    public function __construct(array $unsortedArray)
+    private function getLength($array)
     {
-        $this->unsortedArray = $unsortedArray;
-        $this->sort($this->unsortedArray);
-    }
-    public function getLength()
-    {
-        return $this->arrayLength = count($this->unsortedArray);
-    }
-    public function getLeftValues()
-    {
-        return $this->leftValues;
-    }
-    public function getRightValues()
-    {
-        return $this->rightValues;
+        return $this->arrayLength = count($array);
     }
     private function resetArray($array)
     {
@@ -47,14 +30,17 @@ class QuickSort
     {
         return array_shift($array);
     }
-    private function sort($unsortedArray)
+    public function sort($unsortedArray)
     {
-        if ($this->getLength() < 2) {
+        if ($this->getLength($unsortedArray) < 2) {
             return $unsortedArray;
         } else {
+            $this->leftValues = array();
+            $this->rightValues = array();
             $this->resetArray($unsortedArray);
             $this->selectedKey = $this->getKey($unsortedArray);
-            $this->selectedValue = $this->removeElement($unsortedArray);
+            $this->selectedValue = array_shift($unsortedArray);
+
             foreach ($unsortedArray as $key => $value) {
                 if ($this->selectedValue > $value) {
                     $this->leftValues[$key] = $value;
@@ -62,13 +48,13 @@ class QuickSort
                     $this->rightValues[$key] = $value;
                 }
             }
-  //          print_r($this->rightValues);
- //           die();
-            return(array_merge($this->sort($this->leftValues), array($this->selectedKey => $this->selectedValue), $this->sort($this->rightValues)));
+
+            return array_merge($this->sort($this->leftValues), array($this->selectedKey => $this->selectedValue), $this->sort($this->rightValues));
         }
     }
 }
 $arrayInteger = array(2,5,1,6,7);
-$sortedArray = new QuickSort($arrayInteger);
+$quickSort = new QuickSort();
+$sortedArray = $quickSort->sort($arrayInteger);
 print_r($sortedArray);
 exit;

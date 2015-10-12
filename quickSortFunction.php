@@ -2,7 +2,8 @@
 function quicksort( $array  ) {
     if( count( $array  ) < 2  ) {
         return $array;
-    } $left = $right = array(  );
+    }
+    $left = $right = array(  );
     reset( $array  );
     $pivot_key  = key( $array  );
     $pivot  = array_shift( $array  );
