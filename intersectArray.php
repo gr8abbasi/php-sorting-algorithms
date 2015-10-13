@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @param $array1
+ * @param $array2
+ *
+ * @return array
+ */
 function intersectArray($array1, $array2)
 {
     $intersectedArray = array();
@@ -12,15 +18,15 @@ function intersectArray($array1, $array2)
     // print_r($array1);exit;
     while ($i < count($array1) && $j < count($array2)) {
         if ($array1[$i] < $array2[$j]) {
-            $i++;
+            ++$i;
         } elseif ($array2[$j] < $array1[$i]) {
-            $j++;
+            ++$j;
         } elseif ($array2[$j] == $array1[$i]) {
             // print_r($array2[$j++]);
             // die("Died Here!");
             $intersectedArray[] = $array2[$j];
-            $i++;
-            $j++;
+            ++$i;
+            ++$j;
         }
     }
     print_r($intersectedArray);
