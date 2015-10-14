@@ -26,10 +26,6 @@ class QuickSort
     {
         return key($array);
     }
-    private function removeElement($array)
-    {
-        return array_shift($array);
-    }
     public function sort($unsortedArray)
     {
         if ($this->getLength($unsortedArray) < 2) {
