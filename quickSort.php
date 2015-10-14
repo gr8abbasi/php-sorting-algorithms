@@ -1,31 +1,72 @@
 <?php
 
-// namespace sortingAlgos;
+namespace Sorting\QuickSort;
 
+/**
+ * Sorting\QuickSort\QuickSort
+ */
 class QuickSort
 {
+    /**
+     * @var \Sorting\QuickSort
+     */
     protected $arrayLength;
 
+    /**
+     * @var \Sorting\QuickSort
+     */
     protected $leftValues = array();
 
+    /**
+     * @var \Sorting\QuickSort
+     */
     protected $rightValues = array();
 
+    /**
+     * @var \Sorting\QuickSort
+     */
     protected $selectedValue;
 
+    /**
+     * @var \Sorting\QuickSort
+     */
     protected $selectedKey;
 
+    /**
+     * @param array $array
+     *
+     * @return int
+     */
     private function getLength($array)
     {
         return $this->arrayLength = count($array);
     }
+
+    /**
+     * @param array $array
+     *
+     * @return array
+     */
     private function resetArray($array)
     {
         return reset($array);
     }
+
+    /**
+     * @param array $array
+     *
+     * @return string
+     */
     private function getKey($array)
     {
         return key($array);
     }
+
+    /**
+     *  @param array $unsortedArray
+     *
+     *  @return array
+     */
     public function sort($unsortedArray)
     {
         if ($this->getLength($unsortedArray) < 2) {
@@ -49,7 +90,7 @@ class QuickSort
         }
     }
 }
-$arrayInteger = array(2,5,1,6,7);
+$arrayInteger = array(5,6,4,1,2);
 $quickSort = new QuickSort();
 $sortedArray = $quickSort->sort($arrayInteger);
 print_r($sortedArray);

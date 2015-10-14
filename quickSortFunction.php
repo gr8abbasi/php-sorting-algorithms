@@ -1,24 +1,25 @@
 <?php
-function quicksort( $array  ) {
-    if( count( $array  ) < 2  ) {
+
+function quicksort($array)
+{
+    if (count($array) < 2) {
         return $array;
     }
-    $left = $right = array(  );
-    reset( $array  );
-    $pivot_key  = key( $array  );
-    $pivot  = array_shift( $array  );
-    foreach( $array as $k => $v  ) {
-        if( $v < $pivot  )
+    $left = $right = array();
+    reset($array);
+    $pivot_key = key($array);
+    $pivot = array_shift($array);
+    foreach ($array as $k => $v) {
+        if ($v < $pivot) {
             $left[$k] = $v;
-        else
+        } else {
             $right[$k] = $v;
-
+        }
     }
     return array_merge(quicksort($left), array($pivot_key => $pivot), quicksort($right));
-
 }
 
 // Using quicksort()
 $array = array(5,6,4,1,2);
-$sortedArray  = quicksort( $array  );    //returns sorted array.
+$sortedArray = quicksort($array);    //returns sorted array.
 print_r($sortedArray);
