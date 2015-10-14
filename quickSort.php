@@ -1,6 +1,6 @@
 <?php
 
-namespace sortingAlgos;
+// namespace sortingAlgos;
 
 class QuickSort
 {

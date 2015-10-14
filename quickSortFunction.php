@@ -19,6 +19,6 @@ function quicksort( $array  ) {
 }
 
 // Using quicksort()
-$array = array(2,5,1,6,7);
+$array = array(5,6,4,1,2);
 $sortedArray  = quicksort( $array  );    //returns sorted array.
 print_r($sortedArray);
