@@ -13,26 +13,6 @@ class QuickSort
     protected $arrayLength;
 
     /**
-     * @var \Sorting\QuickSort
-     */
-    protected $leftValues = array();
-
-    /**
-     * @var \Sorting\QuickSort
-     */
-    protected $rightValues = array();
-
-    /**
-     * @var \Sorting\QuickSort
-     */
-    protected $selectedValue;
-
-    /**
-     * @var \Sorting\QuickSort
-     */
-    protected $selectedKey;
-
-    /**
      * @param array $array
      *
      * @return int
@@ -72,26 +52,25 @@ class QuickSort
         if ($this->getLength($unsortedArray) < 2) {
             return $unsortedArray;
         } else {
-            $this->leftValues = array();
-            $this->rightValues = array();
+            $leftValues = array();
+            $rightValues = array();
             $this->resetArray($unsortedArray);
-            $this->selectedKey = $this->getKey($unsortedArray);
-            $this->selectedValue = array_shift($unsortedArray);
+            $selectedKey = $this->getKey($unsortedArray);
+            $selectedValue = array_shift($unsortedArray);
 
             foreach ($unsortedArray as $key => $value) {
-                if ($this->selectedValue > $value) {
-                    $this->leftValues[$key] = $value;
+                if ($selectedValue > $value) {
+                    $leftValues[$key] = $value;
                 } else {
-                    $this->rightValues[$key] = $value;
+                    $rightValues[$key] = $value;
                 }
             }
-
-            return array_merge($this->sort($this->leftValues), array($this->selectedKey => $this->selectedValue), $this->sort($this->rightValues));
+            return array_merge($this->sort($leftValues), array($selectedKey => $selectedValue), $this->sort($rightValues));
         }
     }
 }
+
 $arrayInteger = array(5,6,4,1,2);
 $quickSort = new QuickSort();
 $sortedArray = $quickSort->sort($arrayInteger);
 print_r($sortedArray);
-exit;
