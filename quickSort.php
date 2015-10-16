@@ -5,7 +5,7 @@ namespace Sorting\QuickSort;
 /**
  * Sorting\QuickSort\QuickSort
  */
-class QuickSort
+class quickSort
 {
     /**
      * @var \Sorting\QuickSort

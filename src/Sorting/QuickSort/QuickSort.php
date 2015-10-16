@@ -2,50 +2,15 @@
 
 namespace Sorting\QuickSort;
 
+use Sorting\AbstractSorting;
+
 /**
  * Sorting\QuickSort\QuickSort
  */
-class QuickSort
+class QuickSort extends AbstractSorting
 {
     /**
-     * @var \Sorting\QuickSort
-     */
-    protected $arrayLength;
-
-    /**
-     * @param array $array
-     *
-     * @return int
-     */
-    private function getLength($array)
-    {
-        return $this->arrayLength = count($array);
-    }
-
-    /**
-     * @param array $array
-     *
-     * @return array
-     */
-    private function resetArray($array)
-    {
-        return reset($array);
-    }
-
-    /**
-     * @param array $array
-     *
-     * @return string
-     */
-    private function getKey($array)
-    {
-        return key($array);
-    }
-
-    /**
-     *  @param array $unsortedArray
-     *
-     *  @return array
+     * {@inheritdoc}
      */
     public function sort($unsortedArray)
     {
