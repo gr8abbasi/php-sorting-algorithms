@@ -19,18 +19,39 @@ class MergeSort extends AbstractSorting
         } else {
             $leftValues = array();
             $rightValues = array();
-            $this->resetArray($unsortedArray);
-            $selectedKey = $this->getKey($unsortedArray);
-            $selectedValue = array_shift($unsortedArray);
+
+            $midValue = round($this->getLength($unsortedArray)/2);
 
             foreach ($unsortedArray as $key => $value) {
-                if ($selectedValue > $value) {
+                if ($unsortedArray[$midValue] > $value) {
                     $leftValues[$key] = $value;
                 } else {
                     $rightValues[$key] = $value;
                 }
             }
-            return array_merge($this->sort($leftValues), array($selectedKey => $selectedValue), $this->sort($rightValues));
+            print_r($leftValues);
+            print_r($rightValues);
+            $this->sort($leftValues);
+            $this->sort($rightValues);
+            // exit;
+            // return array_merge($this->sort($leftValues), array($selectedKey => $selectedValue), $this->sort($rightValues));
         }
     }
+    /**
+        *  Divide the array into smallest elements
+        *
+        *  @param array $array
+        *  @return array $result
+     */
+    // private function divide($array)
+    // {
+    //     if($this->getLength($array) < 2){
+    //         return $array;
+    //     }else{
+    //         $left = $right = array();
+    //         while(){
+    //
+    //         }
+    //     }
+    // }
 }

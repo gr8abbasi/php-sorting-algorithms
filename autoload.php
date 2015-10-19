@@ -7,6 +7,7 @@ spl_autoload_register(
             $classes = array(
                 'Sorting\\AbstractSorting'      => '/src/Sorting/AbstractSorting.php',
                 'Sorting\\QuickSort\\QuickSort' => '/src/Sorting/QuickSort/QuickSort.php',
+                'Sorting\\MergeSort\\MergeSort' => '/src/Sorting/MergeSort/MergeSort.php',
             );
         }
         $cn = strtolower($class);
