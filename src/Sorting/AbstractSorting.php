@@ -8,7 +8,7 @@ namespace Sorting;
 abstract class AbstractSorting
 {
     /**
-     * @var \Sorting\AbstractSorting
+     * @var int \Sorting\AbstractSorting
      */
     protected $arrayLength;
 
@@ -17,7 +17,7 @@ abstract class AbstractSorting
      *
      * @return int
      */
-    private function getLength($array)
+    protected function getLength($array)
     {
         return $this->arrayLength = count($array);
     }
@@ -27,7 +27,7 @@ abstract class AbstractSorting
      *
      * @return array
      */
-    private function resetArray($array)
+    protected function resetArray($array)
     {
         return reset($array);
     }
@@ -37,7 +37,7 @@ abstract class AbstractSorting
      *
      * @return string
      */
-    private function getKey($array)
+    protected function getKey($array)
     {
         return key($array);
     }

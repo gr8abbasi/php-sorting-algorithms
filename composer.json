@@ -1,0 +1,14 @@
+{
+    "name": "gr8abbasi/php-sorting-algorithms",
+    "description": "Php sorting algorithms best practices and optimazation. It can be used for study and learning purposes and play around.",
+    "require-dev": {
+    },
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Muhammad Kashif Abbasi",
+            "email": "gr8.abbasi@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

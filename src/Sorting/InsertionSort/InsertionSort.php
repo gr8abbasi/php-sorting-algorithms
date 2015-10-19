@@ -1,13 +1,13 @@
 <?php
 
-namespace Sorting\QuickSort;
+namespace Sorting\InsertionSort;
 
 use Sorting\AbstractSorting;
 
 /**
- * Sorting\QuickSort\QuickSort
+ * Sorting\InsertionSort\InsertionSort
  */
-class QuickSort extends AbstractSorting
+class InsertionSort extends AbstractSorting
 {
     /**
      * {@inheritdoc}
